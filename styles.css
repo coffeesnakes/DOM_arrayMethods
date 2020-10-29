@@ -27,9 +27,54 @@ aside {
   border-right: 1px solid #111;
 }
  button {
+   /* this makes the cursor turn into the little mario glovehand on-hover */
+   cursor: pointer;
    background-color: white;
    /* creates the borders on the button to clean them up */
    border: solid 1px #111;
    /* border radius 5px make the buttons rounded */
    border-radius: 5px;
+   display: block;
+   /* sets the button width to the length of their container (in this case it's the aside container)  */
+   width: 100%;
+   /* padding between the lettering (whitespace on buttons) */
+   padding: 5px;
+   margin-bottom: 20px;
+   /* very nice. */
+   font-weight: bold;
+   font-size: 14px;
+ }
+
+ main {
+   flex: 1;
+   padding: 10px 20px;
+ }
+
+ h2 {
+   /* essentially creates the underline for person Wealth */
+   border-bottom: 1px solid #111;
+   /* padding between the underline and person wealth letters in HTML */
+   padding-bottom: 10px;
+   display: flex;
+   /* because 'PERSON' is in <strong> tags it justifies content with space between P&Wealth */
+   justify-content: space-between;
+   font-weight: 300;
+   margin: 0 0 20px;
+ }
+
+ h3 {
+   background-color: #fff;
+ border-bottom: 1px solid #111;
+   padding: 10px;
+   display: flex;
+   justify-content: space-between;
+   font-weight: 300;
+   margin: 20px 0 0;
+ }
+
+ .person {
+   display: flex;
+   justify-content: space-between;
+   font-size: 20px;
+   margin-bottom: 10px;
  }
