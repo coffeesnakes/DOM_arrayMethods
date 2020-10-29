@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: gray;
+  background-color: pink;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -15,5 +15,21 @@ body {
 
 .container {
   display: flex;
-
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 800px;
 }
+
+aside {
+  padding: 10px 20px;
+  width: 250px;
+  border-right: 1px solid #111;
+}
+ button {
+   background-color: white;
+   /* creates the borders on the button to clean them up */
+   border: solid 1px #111;
+   /* border radius 5px make the buttons rounded */
+   border-radius: 5px;
+ }
