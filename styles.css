@@ -26,6 +26,7 @@ aside {
   width: 250px;
   border-right: 1px solid #111;
 }
+
  button {
    /* this makes the cursor turn into the little mario glovehand on-hover */
    cursor: pointer;
@@ -64,7 +65,7 @@ aside {
 
  h3 {
    background-color: #fff;
- border-bottom: 1px solid #111;
+   border-bottom: 1px solid #111;
    padding: 10px;
    display: flex;
    justify-content: space-between;
