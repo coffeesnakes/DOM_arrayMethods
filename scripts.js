@@ -8,9 +8,9 @@ const calculateWealthButton = document.getElementById('calculate-wealth');
 
 // initialized array to store an array of objects with values to run methods on
 let data = [];
-getRandomUser();
-getRandomUser();
-getRandomUser();
+populateData(5)
+
+
 // fetch random user with api and add money
 
 async function getRandomUser() {
@@ -19,7 +19,6 @@ async function getRandomUser() {
   const firstName = data.results['0'].name.first;
   const lastName = data.results['0'].name.last
   const user = data.results[0];
-
 
   const newUser = {
     name: firstName + ' ' + lastName,
@@ -47,6 +46,14 @@ element.classList.add('person');
 element.innerHTML = `<strong> ${item.name} </strong> ${item.money}`;
 // appendChild uses out element we created above and adds the users to DOM
 main.appendChild(element);
+
 })
+}
+//  hoisted function called uptop to populate data with x users instead of
+// calling the getRandomUser function over and over manually
+function populateData(x) {
+  for (let i = 0; i < x; i++) {
+    getRandomUser();
+  }
 }
 
