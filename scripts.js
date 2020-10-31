@@ -18,7 +18,6 @@ async function getRandomUser() {
   const data = await result.json();
   const firstName = data.results['0'].name.first;
   const lastName = data.results['0'].name.last
-  // console.log('names: ', firstName + ' ' + lastName)
   const user = data.results[0];
 
 
@@ -32,4 +31,21 @@ async function getRandomUser() {
 
 function addData (obj) {
   data.push(obj);
+
+  updateDOM();
 }
+
+// where the param providedData = points to data for a default value if providedData has not input
+function updateDOM (providedData = data) {
+// clear main div (person  wealth area)
+  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
+
+providedData.forEach(item => {
+const element = document.createElement('div');
+// adds the class 'person' to this div
+element.classList.add('person');
+element.innerHTML = `<strong> ${item.name} </strong> ${item.money}`
+
+})
+}
+
