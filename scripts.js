@@ -26,6 +26,7 @@ async function getRandomUser() {
   }
   // locally storing data (users) in an array
   addData(newUser)
+  console.log(newUser)
 }
 
 function addData (obj) {
@@ -60,3 +61,6 @@ function populateData(x) {
 function formatMoney (num) {
   return '$' + (num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
+
+// event listeners
+addUserButton.addEventListener('click', getRandomUser);
