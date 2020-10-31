@@ -43,7 +43,7 @@ providedData.forEach(item => {
 const element = document.createElement('div');
 // adds the class 'person' to this div
 element.classList.add('person');
-element.innerHTML = `<strong> ${item.name} </strong> ${item.money}`;
+element.innerHTML = `<strong> ${item.name} </strong> ${formatMoney(item.money)}`;
 // appendChild uses out element we created above and adds the users to DOM
 main.appendChild(element);
 
@@ -56,4 +56,7 @@ function populateData(x) {
     getRandomUser();
   }
 }
-
+//
+function formatMoney (num) {
+  return '$' + (num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
