@@ -26,6 +26,10 @@ async function getRandomUser() {
     name: firstName + ' ' + lastName,
     money: Math.floor(Math.random() * 1000000)
   }
-  console.log(newUser)
+  // locally storing data (users) in an array
+  addData(newUser)
 }
 
+function addData (obj) {
+  data.push(obj);
+}
