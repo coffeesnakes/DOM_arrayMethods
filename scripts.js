@@ -29,26 +29,26 @@ async function getRandomUser() {
   console.log(newUser)
 }
 
-function addData (obj) {
+function addData(obj) {
   data.push(obj);
 
   updateDOM();
 }
 
 // where the param providedData = points to data for a default value if providedData has not input
-function updateDOM (providedData = data) {
-// clear main div (person  wealth area)
+function updateDOM(providedData = data) {
+  // clear main div (person  wealth area)
   main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
 
-providedData.forEach(item => {
-const element = document.createElement('div');
-// adds the class 'person' to this div
-element.classList.add('person');
-element.innerHTML = `<strong> ${item.name} </strong> ${formatMoney(item.money)}`;
-// appendChild uses out element we created above and adds the users to DOM
-main.appendChild(element);
+  providedData.forEach(item => {
+    const element = document.createElement('div');
+    // adds the class 'person' to this div
+    element.classList.add('person');
+    element.innerHTML = `<strong> ${item.name} </strong> ${formatMoney(item.money)}`;
+    // appendChild uses out element we created above and adds the users to DOM
+    main.appendChild(element);
 
-})
+  })
 }
 //  hoisted function called uptop to populate data with x users instead of
 // calling the getRandomUser function over and over manually
@@ -57,8 +57,9 @@ function populateData(x) {
     getRandomUser();
   }
 }
+
 //
-function formatMoney (num) {
+function formatMoney(num) {
   return '$' + (num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
