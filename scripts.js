@@ -21,7 +21,7 @@ async function getRandomUser() {
   const firstName = data.results['0'].name.first;
   const lastName = data.results['0'].name.last
   const user = data.results[0];
-console.log(result);
+
   const newUser = {
     name: firstName + ' ' + lastName,
     money: Math.floor(Math.random() * 1000000)
@@ -64,21 +64,31 @@ function formatMoney(num) {
 }
 
 // uses .map taking in each user, a spread operator is being used on user because the data could grow with additional users.
-function doubleMoney () {
-  data = data.map((user) => { return { ...user, money: user.money * 2}});
+function doubleMoney() {
+  data = data.map((user) => { return { ...user, money: user.money * 2 } });
   updateDOM();
   console.log(data)
 }
 // sorts wealth to find the wealthiest people
-function sortWealth () {
-data.sort((a, b) => b.money - a.money)
-updateDOM();
+function sortWealth() {
+  data.sort((a, b) => b.money - a.money)
+  updateDOM();
 }
 
 // filters wealth to show only millionaires with .filter
-function displayMillionaires () {
-data = data.filter(user => (user.money > 1000000))
-updateDOM();
+function displayMillionaires() {
+  data = data.filter(user => (user.money > 1000000))
+  updateDOM();
+}
+
+// uses .reduce to accumulate wealth of users and get sum total.
+function calculateWealth() {
+  const wealth = data.reduce((acc, user) => (acc += user.money), 0);
+  const wealthElement = document.createElement('div');
+
+  wealthElement.innerHTML = `<h3>Total wealth: <strong>${formatMoney(wealth)}</strong></h3>`;
+
+  main.appendChild(wealthElement)
 }
 
 // event listeners
@@ -86,3 +96,4 @@ addUserButton.addEventListener('click', getRandomUser);
 doubleButton.addEventListener('click', doubleMoney);
 sortButton.addEventListener('click', sortWealth);
 showMillionaires.addEventListener('click', displayMillionaires);
+calculateWealthButton.addEventListener('click', calculateWealth);
