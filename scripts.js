@@ -69,7 +69,13 @@ function doubleMoney () {
   updateDOM();
   console.log(data)
 }
+// sorts wealth to find the wealthiest people
+function sortWealth () {
+data.sort((a, b) => b.money - a.money)
+updateDOM();
+}
 
 // event listeners
 addUserButton.addEventListener('click', getRandomUser);
 doubleButton.addEventListener('click', doubleMoney);
+sortButton.addEventListener('click', sortWealth);
