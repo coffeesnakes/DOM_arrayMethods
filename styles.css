@@ -12,7 +12,6 @@ body {
   margin: 0;
 }
 
-
 .container {
   display: flex;
   padding: 20px;
@@ -26,7 +25,6 @@ aside {
   width: 250px;
   border-right: 1px solid #111;
 }
-
 
  button {
    /* this makes the cursor turn into the little mario glovehand on-hover */
@@ -64,8 +62,9 @@ aside {
    margin: 0 0 20px;
  }
 
+/* styles the h3 element created with the calculate wealth button */
  h3 {
-   background-color: #fff;
+   background-color: pink;
    border-bottom: 1px solid #111;
    padding: 10px;
    display: flex;
