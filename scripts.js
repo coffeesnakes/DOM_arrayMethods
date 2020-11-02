@@ -52,8 +52,7 @@ function updateDOM(providedData = data) {
 
   })
 }
-//  hoisted function called uptop to populate data with x users instead of
-// calling the getRandomUser function over and over manually
+//  hoisted function called uptop to populate data with x users
 function populateData(x) {
   for (let i = 0; i < x; i++) {
     getRandomUser();
@@ -64,5 +63,13 @@ function formatMoney(num) {
   return '$' + (num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
+// uses .map taking in each user, a spread operator is being used on user because the data could grow with additional users.
+function doubleMoney () {
+  data = data.map((user) => { return { ...user, money: user.money * 2}});
+  updateDOM();
+  console.log(data)
+}
+
 // event listeners
 addUserButton.addEventListener('click', getRandomUser);
+doubleButton.addEventListener('click', doubleMoney);
