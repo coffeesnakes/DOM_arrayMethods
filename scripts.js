@@ -14,12 +14,14 @@ populateData(5)
 // fetch random user with api and add money
 
 async function getRandomUser() {
-  const result = await fetch('https://randomuser.me/api');
+  const proxy = "https://cors-anywhere.herokuapp.com/";
+  const url = "https://randomuser.me/api";
+  const result = await fetch(proxy + url)
   const data = await result.json();
   const firstName = data.results['0'].name.first;
   const lastName = data.results['0'].name.last
   const user = data.results[0];
-
+console.log(result);
   const newUser = {
     name: firstName + ' ' + lastName,
     money: Math.floor(Math.random() * 1000000)
@@ -58,8 +60,6 @@ function populateData(x) {
   }
 }
 
-
-//
 function formatMoney(num) {
   return '$' + (num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
