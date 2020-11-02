@@ -75,7 +75,14 @@ data.sort((a, b) => b.money - a.money)
 updateDOM();
 }
 
+// filters wealth to show only millionaires with .filter
+function displayMillionaires () {
+data = data.filter(user => (user.money > 1000000))
+updateDOM();
+}
+
 // event listeners
 addUserButton.addEventListener('click', getRandomUser);
 doubleButton.addEventListener('click', doubleMoney);
 sortButton.addEventListener('click', sortWealth);
+showMillionaires.addEventListener('click', displayMillionaires);
