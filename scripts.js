@@ -28,7 +28,6 @@ async function getRandomUser() {
   }
   // locally storing data (users) in an array
   addData(newUser)
-  console.log(newUser)
 }
 
 function addData(obj) {
